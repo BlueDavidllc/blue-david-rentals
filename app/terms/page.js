@@ -57,7 +57,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="font-bold text-blue-400 tracking-wider text-sm mb-2">CONTACT</h2>
-            <p>Email info@bluedavidrentals.com or call +1 800-317-4849.</p>
+            <p>Email info@bluedavidrentals.com or call +1 702-957-1206.</p>
           </section>
         </div>
 

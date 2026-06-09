@@ -490,13 +490,13 @@ function ContactScreen({ onBack }) {
         <p className="mt-4 text-sm text-white/60 max-w-[280px]">Real support from real people. Reach out anytime and we&apos;ll get back to you.</p>
 
         <div className="mt-8 space-y-4">
-          <a href="tel:+18003174849" className="flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01] hover:border-blue-500/40 transition group">
+          <a href="tel:+17029571206" className="flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01] hover:border-blue-500/40 transition group">
             <div className="w-12 h-12 rounded-full bg-blue-600/20 ring-2 ring-blue-500/50 flex items-center justify-center shrink-0">
               <Phone size={20} className="text-blue-400" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="text-[10px] font-bold tracking-widest text-white/60">PHONE</div>
-              <div className="font-display text-xl mt-0.5">+1 800-317-4849</div>
+              <div className="font-display text-xl mt-0.5">+1 702-957-1206</div>
             </div>
             <ArrowRight size={18} className="text-blue-500 group-hover:translate-x-0.5 transition-transform" />
           </a>
