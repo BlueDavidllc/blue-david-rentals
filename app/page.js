@@ -54,7 +54,42 @@ export default function Page() {
 
   return (
     <div className="min-h-screen w-full bg-[#05070f] text-white font-sans antialiased flex justify-center">
-      <style>{"@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=Caveat:wght@600;700&display=swap'); .font-display { font-family: 'Anton', sans-serif; } .font-script { font-family: 'Caveat', cursive; } .font-body { font-family: 'Inter', sans-serif; } .hide-scroll::-webkit-scrollbar { display: none; } .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; } @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } } .anim-fade-up { animation: fadeUp 0.7s cubic-bezier(.2,.7,.2,1) both; } @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 0 0 rgba(37,99,235,.55); } 50% { box-shadow: 0 0 0 14px rgba(37,99,235,0); } } .pulse-glow { animation: pulseGlow 2.4s infinite; }"}</style>
+                  <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=Caveat:wght@600;700&display=swap');
+        .font-display { font-family: 'Anton', sans-serif; }
+        .font-script { font-family: 'Caveat', cursive; }
+        .font-body { font-family: 'Inter', sans-serif; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .anim-fade-up { animation: fadeUp 0.7s cubic-bezier(.2,.7,.2,1) both; }
+        @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 0 0 rgba(37,99,235,.55); } 50% { box-shadow: 0 0 0 14px rgba(37,99,235,0); } }
+        .pulse-glow { animation: pulseGlow 2.4s infinite; }
+        @keyframes headlightFlicker { 0%,100% { opacity: 0.85; } 45% { opacity: 1; } 50% { opacity: 0.6; } 55% { opacity: 1; } }
+        .headlight-glow { position: absolute; bottom: 18%; right: 6%; width: 200px; height: 120px; background: radial-gradient(circle, rgba(200,230,255,0.9) 0%, rgba(120,180,255,0.4) 40%, transparent 70%); animation: headlightFlicker 4s ease-in-out infinite; pointer-events: none; mix-blend-mode: screen; z-index: 5; filter: blur(24px); }
+        @keyframes eiffelTwinkle { 0%,100% { opacity: 0.3; } 50% { opacity: 0.85; } }
+        .eiffel-glow { position: absolute; top: 4%; right: 4%; width: 140px; height: 320px; background: radial-gradient(ellipse, rgba(255,200,80,0.4) 0%, transparent 60%); animation: eiffelTwinkle 3s ease-in-out infinite; pointer-events: none; mix-blend-mode: screen; z-index: 4; }
+        @keyframes wheelSpin { 0%,100% { opacity: 0.25; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.06); } }
+        .wheel-glow { position: absolute; top: 12%; right: 28%; width: 130px; height: 130px; background: radial-gradient(circle, rgba(120,180,255,0.55) 0%, transparent 70%); animation: wheelSpin 4.5s ease-in-out infinite; pointer-events: none; mix-blend-mode: screen; z-index: 4; border-radius: 50%; }
+        @keyframes particle { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 10% { opacity: 0.6; } 90% { opacity: 0.3; } 100% { transform: translateY(-20vh) translateX(40px); opacity: 0; } }
+        .particle { position: absolute; width: 2px; height: 2px; background: rgba(120,180,255,0.8); border-radius: 50%; animation: particle linear infinite; pointer-events: none; z-index: 6; }
+        @keyframes textGlow { 0%,100% { text-shadow: 0 0 20px rgba(59,130,246,0.4); } 50% { text-shadow: 0 0 40px rgba(59,130,246,0.9), 0 0 60px rgba(59,130,246,0.4); } }
+        .text-glow-pulse { animation: textGlow 3s ease-in-out infinite; }
+        @keyframes scriptShimmer { 0%,100% { filter: drop-shadow(0 0 12px rgba(59,130,246,0.5)); } 50% { filter: drop-shadow(0 0 24px rgba(96,165,250,0.9)); } }
+        .script-shimmer { animation: scriptShimmer 2.8s ease-in-out infinite; }
+        @keyframes iconPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(59,130,246,0.4); } 50% { box-shadow: 0 0 0 6px rgba(59,130,246,0); } }
+        .icon-pulse { animation: iconPulse 2.5s ease-in-out infinite; }
+        @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+        .float-anim { animation: floatY 4s ease-in-out infinite; }
+        @keyframes brandFade { 0%,100% { opacity: 0.6; } 50% { opacity: 1; filter: brightness(1.3); } }
+        .brand-uber { animation: brandFade 4s ease-in-out infinite; }
+        .brand-lyft { animation: brandFade 4s ease-in-out infinite 1s; }
+        .brand-amazon { animation: brandFade 4s ease-in-out infinite 2s; }
+        .brand-doordash { animation: brandFade 4s ease-in-out infinite 3s; }
+        @keyframes shine { 0% { transform: translateX(-100%); } 100% { transform: translateX(200%); } }
+        .btn-shine { position: relative; overflow: hidden; }
+        .btn-shine::after { content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); animation: shine 3s ease-in-out infinite; }
+      `}</style>
 
       <div className="relative w-full max-w-[420px] min-h-screen overflow-hidden bg-[#05070f] font-body pb-24">
         {activeTab === 'apply' && <ApplyScreen onBack={() => setActiveTab('home')} flash={flash} onApproved={() => setHasApplied(true)} />}
@@ -79,7 +114,7 @@ export default function Page() {
 
               <div className="relative z-20 px-5 pt-8">
                 <h1 className="font-display text-[52px] leading-[0.92] tracking-tight">GET ON THE<br/>ROAD.</h1>
-                <h1 className="font-display text-[52px] leading-[0.92] tracking-tight text-blue-500 mt-2">GET PAID.</h1>
+                <h1 className="font-display text-[52px] leading-[0.92] tracking-tight text-blue-500 mt-2 text-glow-pulse">GET PAID.</h1>
 
                 <p className="mt-5 font-extrabold text-sm tracking-wide">
                   RENTALS FOR RIDESHARE DRIVERS<br/>
@@ -91,7 +126,7 @@ export default function Page() {
                 </p>
 
                 <div className="mt-5 flex items-center gap-3">
-                  <button onClick={() => setActiveTab('apply')} className="pulse-glow flex items-center gap-2 bg-blue-600 hover:bg-blue-500 transition px-4 py-3 rounded-lg text-xs font-bold tracking-wider">
+                  <button onClick={() => setActiveTab('apply')} className="pulse-glow btn-shine flex items-center gap-2 bg-blue-600 hover:bg-blue-500 transition px-4 py-3 rounded-lg text-xs font-bold tracking-wider">
                     APPLY NOW <ArrowRight size={14} />
                   </button>
                   <button onClick={() => window.open('https://bluedavidrentals.com/fleet', '_blank')} className="flex items-center gap-2 bg-black/40 border border-white/30 px-4 py-3 rounded-lg text-xs font-bold tracking-wider">
@@ -102,17 +137,17 @@ export default function Page() {
                 <div className="mt-4 inline-flex flex-wrap items-center gap-x-2 gap-y-1 bg-black/50 border border-white/15 rounded-full pl-3 pr-4 py-2">
                   <CheckCircle2 size={14} className="text-blue-400" />
                   <span className="text-[10px] font-bold tracking-widest text-white/80">APPROVED FOR</span>
-                  <span className="font-extrabold text-white text-sm">Uber</span>
-                  <span className="font-extrabold text-sm" style={{ color: '#FF00BF' }}>Lyft</span>
-                  <span className="font-extrabold text-sm" style={{ color: '#FF9900' }}>Amazon</span>
-                  <span className="font-extrabold text-sm" style={{ color: '#EE3124' }}>DoorDash</span>
+                  <span className="font-extrabold text-white text-sm brand-uber">Uber</span>
+                  <span className="font-extrabold text-sm brand-lyft" style={{ color: '#FF00BF' }}>Lyft</span>
+                  <span className="font-extrabold text-sm brand-amazon" style={{ color: '#FF9900' }}>Amazon</span>
+                  <span className="font-extrabold text-sm brand-doordash" style={{ color: '#EE3124' }}>DoorDash</span>
                 </div>
               </div>
 
               <div className="absolute bottom-16 left-0 right-0 z-20 text-center px-4">
                 <div className="relative inline-block">
                   <div className="absolute -inset-6 bg-blue-600/30 blur-3xl rounded-full" />
-                  <p className="relative font-script text-3xl text-white italic">
+                  <p className="relative font-script text-3xl text-white italic script-shimmer">
                     More driving. <span className="text-blue-400">More earning.</span>
                   </p>
                 </div>
@@ -187,7 +222,7 @@ export default function Page() {
           <div className="grid grid-cols-4 py-2">
             <NavBtn icon={Home} label="HOME" active={activeTab === 'home'} onClick={() => setActiveTab('home')} />
             <NavBtn icon={ClipboardCheck} label="APPLY" active={activeTab === 'apply'} onClick={() => setActiveTab('apply')} />
-            <NavBtn icon={Calendar} label="BOOKINGS" active={false} onClick={() => { window.open('https://bluedavidrentals.com', '_blank'); flash('Opening bookings...'); }} />
+            <NavBtn icon={Calendar} label="BOOKINGS" active={false} onClick={() => { window.open('https://bluedavidrentals.com/fleet', '_blank'); flash('Opening fleet...'); }} />
             <NavBtn icon={Phone} label="CONTACT" active={activeTab === 'contact'} onClick={() => setActiveTab('contact')} />
           </div>
           <div className="flex justify-center pb-1.5">
@@ -246,7 +281,7 @@ function FeatureCell({ feature }) {
   const Icon = feature.icon;
   return (
     <div className="flex flex-col items-center text-center px-1">
-      <div className="w-11 h-11 rounded-full bg-white/5 ring-2 ring-blue-500/60 flex items-center justify-center text-blue-400">
+      <div className="w-11 h-11 rounded-full bg-white/5 ring-2 ring-blue-500/60 flex items-center justify-center text-blue-400 icon-pulse">
         <Icon size={20} />
       </div>
       <div className="mt-2 text-[10px] font-extrabold tracking-widest">{feature.title}</div>
@@ -257,7 +292,7 @@ function FeatureCell({ feature }) {
 
 function VehicleCard({ v, onSelect }) {
   return (
-    <div className="snap-start shrink-0 w-[180px] rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
+    <div className="snap-start shrink-0 w-[180px] rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden float-anim">
       <div className="relative h-[110px]">
         <img src={v.img} alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#05070f] to-transparent" />
