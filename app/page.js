@@ -94,7 +94,7 @@ export default function Page() {
                   <button onClick={() => setActiveTab('apply')} className="pulse-glow flex items-center gap-2 bg-blue-600 hover:bg-blue-500 transition px-4 py-3 rounded-lg text-xs font-bold tracking-wider">
                     APPLY NOW <ArrowRight size={14} />
                   </button>
-                  <button onClick={() => tryAccessFleet('vehicles')} className="flex items-center gap-2 bg-black/40 border border-white/30 px-4 py-3 rounded-lg text-xs font-bold tracking-wider">
+                  <button onClick={() => window.open('https://bluedavidrentals.com/fleet', '_blank')} className="flex items-center gap-2 bg-black/40 border border-white/30 px-4 py-3 rounded-lg text-xs font-bold tracking-wider">
                     BROWSE <ArrowRight size={14} />
                   </button>
                 </div>
@@ -132,14 +132,14 @@ export default function Page() {
             <section className="mt-6">
               <div className="px-4 flex items-center justify-between">
                 <h2 className="font-display text-2xl">POPULAR VEHICLES</h2>
-                <button onClick={() => tryAccessFleet('vehicles')} className="flex items-center gap-1 text-blue-500 text-xs font-bold tracking-widest">
+                <button onClick={() => window.open('https://bluedavidrentals.com/fleet', '_blank')} className="flex items-center gap-1 text-blue-500 text-xs font-bold tracking-widest">
                   VIEW ALL <ArrowRight size={14} />
                 </button>
               </div>
 
               <div className="mt-3 flex gap-3 overflow-x-auto hide-scroll px-4 pb-2 snap-x snap-mandatory">
                 {vehicles.map((v) => (
-                  <VehicleCard key={v.tag} v={v} onSelect={() => tryAccessFleet('vehicles')} />
+                  <VehicleCard key={v.tag} v={v} onSelect={() => window.open('https://bluedavidrentals.com/fleet', '_blank')} />
                 ))}
               </div>
             </section>
