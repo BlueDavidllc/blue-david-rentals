@@ -65,10 +65,10 @@ export default function Page() {
         .anim-fade-up { animation: fadeUp 0.7s cubic-bezier(.2,.7,.2,1) both; }
         @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 0 0 rgba(37,99,235,.55); } 50% { box-shadow: 0 0 0 14px rgba(37,99,235,0); } }
         .pulse-glow { animation: pulseGlow 2.4s infinite; }
-        @keyframes headlightFlicker { 0%,100% { opacity: 0.85; } 45% { opacity: 1; } 50% { opacity: 0.6; } 55% { opacity: 1; } }
-        .headlight-glow { position: absolute; bottom: 18%; right: 6%; width: 200px; height: 120px; background: radial-gradient(circle, rgba(200,230,255,0.9) 0%, rgba(120,180,255,0.4) 40%, transparent 70%); animation: headlightFlicker 4s ease-in-out infinite; pointer-events: none; mix-blend-mode: screen; z-index: 5; filter: blur(24px); }
-        @keyframes eiffelTwinkle { 0%,100% { opacity: 0.3; } 50% { opacity: 0.85; } }
-        .eiffel-glow { position: absolute; top: 4%; right: 4%; width: 140px; height: 320px; background: radial-gradient(ellipse, rgba(255,200,80,0.4) 0%, transparent 60%); animation: eiffelTwinkle 3s ease-in-out infinite; pointer-events: none; mix-blend-mode: screen; z-index: 4; }
+        @keyframes headlightFlicker { 0%,100% { opacity: 0.95; transform: scale(1); } 45% { opacity: 1; transform: scale(1.04); } 50% { opacity: 0.7; transform: scale(0.96); } 55% { opacity: 1; transform: scale(1.04); } }
+        .headlight-glow { position: absolute; top: 56%; right: 26%; width: 340px; height: 200px; background: radial-gradient(ellipse, rgba(255,255,255,1) 0%, rgba(230,245,255,1) 10%, rgba(170,210,255,0.85) 25%, rgba(100,160,230,0.55) 45%, rgba(60,120,200,0.25) 65%, transparent 80%); animation: headlightFlicker 3s ease-in-out infinite; pointer-events: none; mix-blend-mode: screen; z-index: 5; filter: blur(8px); }
+        @keyframes eiffelBeam { 0%,100% { opacity: 0.7; transform: scaleY(0.88) scaleX(0.92); } 50% { opacity: 1; transform: scaleY(1.08) scaleX(1.1); } }
+        .eiffel-glow { position: absolute; top: 0; right: 3%; width: 130px; height: 60%; background: linear-gradient(to top, rgba(255,200,80,0.95) 0%, rgba(255,220,120,1) 20%, rgba(255,200,80,0.8) 45%, rgba(255,180,40,0.4) 70%, transparent 100%); animation: eiffelBeam 2.8s ease-in-out infinite; pointer-events: none; mix-blend-mode: screen; z-index: 4; filter: blur(20px); transform-origin: bottom center; }
         @keyframes wheelSpin { 0%,100% { opacity: 0.25; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.06); } }
         .wheel-glow { position: absolute; top: 12%; right: 28%; width: 130px; height: 130px; background: radial-gradient(circle, rgba(120,180,255,0.55) 0%, transparent 70%); animation: wheelSpin 4.5s ease-in-out infinite; pointer-events: none; mix-blend-mode: screen; z-index: 4; border-radius: 50%; }
         @keyframes particle { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 10% { opacity: 0.6; } 90% { opacity: 0.3; } 100% { transform: translateY(-20vh) translateX(40px); opacity: 0; } }
@@ -89,6 +89,84 @@ export default function Page() {
         @keyframes shine { 0% { transform: translateX(-100%); } 100% { transform: translateX(200%); } }
         .btn-shine { position: relative; overflow: hidden; }
         .btn-shine::after { content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); animation: shine 3s ease-in-out infinite; }
+        @keyframes spotlight {
+          0% { transform: translateX(-50%) rotate(-20deg); opacity: 0; }
+          15% { opacity: 0.9; }
+          85% { opacity: 0.9; }
+          100% { transform: translateX(150%) rotate(20deg); opacity: 0; }
+        }
+        .hero-spotlight {
+          position: absolute;
+          top: -20%;
+          left: 0;
+          width: 200px;
+          height: 140%;
+          background: linear-gradient(90deg, transparent, rgba(120,180,255,0.35), transparent);
+          animation: spotlight 6s ease-in-out infinite;
+          pointer-events: none;
+          mix-blend-mode: screen;
+          z-index: 5;
+          filter: blur(20px);
+        }
+
+        @keyframes scan {
+          0%, 100% { transform: translateY(-100%); opacity: 0; }
+          40% { opacity: 0.6; }
+          60% { opacity: 0.6; }
+          100% { transform: translateY(100vh); opacity: 0; }
+        }
+        .hero-scan {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          height: 3px;
+          background: linear-gradient(90deg, transparent, rgba(96,165,250,0.8), transparent);
+          animation: scan 4s ease-in-out infinite;
+          pointer-events: none;
+          mix-blend-mode: screen;
+          z-index: 6;
+          filter: blur(2px);
+        }
+
+        @keyframes ringPulse {
+          0%, 100% { transform: scale(0.9); opacity: 0; }
+          50% { transform: scale(1.6); opacity: 0.7; }
+        }
+        .hero-headlight-ring {
+          position: absolute;
+          top: 62%;
+          right: 32%;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          border: 2px solid rgba(255,255,255,0.5);
+          box-shadow: 0 0 25px rgba(150,200,255,0.6), inset 0 0 25px rgba(150,200,255,0.3);
+          animation: ringPulse 2.5s ease-in-out infinite;
+          pointer-events: none;
+          mix-blend-mode: screen;
+          z-index: 5;
+        }
+
+        @keyframes eiffelShoot {
+          0% { transform: scaleY(0) translateY(100%); opacity: 0; transform-origin: bottom; }
+          20% { opacity: 1; }
+          100% { transform: scaleY(1) translateY(0); opacity: 0; transform-origin: bottom; }
+        }
+        .hero-eiffel-beam {
+          position: absolute;
+          top: 0;
+          right: 6%;
+          width: 80px;
+          height: 70%;
+          background: linear-gradient(to top, rgba(255,200,80,0.9) 0%, rgba(255,220,120,0.7) 30%, rgba(255,180,40,0.3) 70%, transparent 100%);
+          animation: eiffelShoot 3s ease-in-out infinite;
+          pointer-events: none;
+          mix-blend-mode: screen;
+          z-index: 4;
+          filter: blur(16px);
+        }
+
       `}</style>
 
       <div className="relative w-full max-w-[420px] min-h-screen overflow-hidden bg-[#05070f] font-body pb-24">
@@ -103,6 +181,10 @@ export default function Page() {
                 <img src={HERO_IMAGE} alt="Las Vegas driver" className="absolute inset-0 w-full h-full object-cover" style={{objectPosition:'65% center'}} />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#05070f] via-[#05070f]/80 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#05070f]" />
+                {/* Sweeping spotlight beam across the hero */}
+                {/* Vertical light scan line */}
+                {/* Rotating glow ring on car headlight area */}
+                {/* Eiffel beam shooting up */}
               </div>
 
               <header className="relative z-30 flex items-center justify-between px-4 pt-4">
