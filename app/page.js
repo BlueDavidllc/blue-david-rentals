@@ -187,7 +187,7 @@ export default function Page() {
           <div className="grid grid-cols-4 py-2">
             <NavBtn icon={Home} label="HOME" active={activeTab === 'home'} onClick={() => setActiveTab('home')} />
             <NavBtn icon={ClipboardCheck} label="APPLY" active={activeTab === 'apply'} onClick={() => setActiveTab('apply')} />
-            <NavBtn icon={Calendar} label="BOOKINGS" active={false} onClick={() => { if (hasApplied) { window.open('https://bluedavidrentals.com', '_blank'); flash('Opening bookings...'); } else { flash('Apply first to book'); setTimeout(() => setActiveTab('apply'), 600); } }} />
+            <NavBtn icon={Calendar} label="BOOKINGS" active={false} onClick={() => { window.open('https://bluedavidrentals.com', '_blank'); flash('Opening bookings...'); }} />
             <NavBtn icon={Phone} label="CONTACT" active={activeTab === 'contact'} onClick={() => setActiveTab('contact')} />
           </div>
           <div className="flex justify-center pb-1.5">
