@@ -211,7 +211,7 @@ export default function Page() {
                   <button onClick={() => setActiveTab('apply')} className="pulse-glow btn-shine flex items-center gap-2 bg-blue-600 hover:bg-blue-500 transition px-4 py-3 rounded-lg text-xs font-bold tracking-wider">
                     APPLY NOW <ArrowRight size={14} />
                   </button>
-                  <button onClick={() => window.open('https://bluedavidrentals.com/fleet', '_blank')} className="flex items-center gap-2 bg-black/40 border border-white/30 px-4 py-3 rounded-lg text-xs font-bold tracking-wider">
+                  <button onClick={() => setActiveTab('apply')} className="flex items-center gap-2 bg-black/40 border border-white/30 px-4 py-3 rounded-lg text-xs font-bold tracking-wider">
                     BROWSE <ArrowRight size={14} />
                   </button>
                 </div>
@@ -249,14 +249,14 @@ export default function Page() {
             <section className="mt-6">
               <div className="px-4 flex items-center justify-between">
                 <h2 className="font-display text-2xl">POPULAR VEHICLES</h2>
-                <button onClick={() => window.open('https://bluedavidrentals.com/fleet', '_blank')} className="flex items-center gap-1 text-blue-500 text-xs font-bold tracking-widest">
+                <button onClick={() => setActiveTab('apply')} className="flex items-center gap-1 text-blue-500 text-xs font-bold tracking-widest">
                   VIEW ALL <ArrowRight size={14} />
                 </button>
               </div>
 
               <div className="mt-3 flex gap-3 overflow-x-auto hide-scroll px-4 pb-2 snap-x snap-mandatory">
                 {vehicles.map((v) => (
-                  <VehicleCard key={v.tag} v={v} onSelect={() => window.open('https://bluedavidrentals.com/fleet', '_blank')} />
+                  <VehicleCard key={v.tag} v={v} onSelect={() => setActiveTab('apply')} />
                 ))}
               </div>
             </section>
@@ -304,7 +304,7 @@ export default function Page() {
           <div className="grid grid-cols-4 py-2">
             <NavBtn icon={Home} label="HOME" active={activeTab === 'home'} onClick={() => setActiveTab('home')} />
             <NavBtn icon={ClipboardCheck} label="APPLY" active={activeTab === 'apply'} onClick={() => setActiveTab('apply')} />
-            <NavBtn icon={Calendar} label="BOOKINGS" active={false} onClick={() => { window.open('https://bluedavidrentals.com/fleet', '_blank'); flash('Opening fleet...'); }} />
+            <NavBtn icon={Calendar} label="BOOKINGS" active={false} onClick={() => { setActiveTab('apply'); flash('Opening fleet...'); }} />
             <NavBtn icon={Phone} label="CONTACT" active={activeTab === 'contact'} onClick={() => setActiveTab('contact')} />
           </div>
           <div className="flex justify-center pb-1.5">
